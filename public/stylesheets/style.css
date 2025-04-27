@@ -6,7 +6,8 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #fdfaf5;
+    background: url('/assets/360_F_248303283_LEJuZAKZVSsM5dnMhUSPLIIp0BpB2kfE.jpg');
+    background-size: cover;
     color: #222;
 }
 
@@ -17,8 +18,11 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #fff;
+    background-color: #ffffff63;
     font-family: "Roboto", sans-serif;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
 }
 
 nav ul {
@@ -27,12 +31,10 @@ nav ul {
     list-style: none;
 
 
+
 }
 
 
-/* nav ul:hover {
-    background-color: #343F4F;
-} */
 
 .logo {
     font-weight: bold;
@@ -58,7 +60,7 @@ nav a {
 
 .hero {
     text-align: center;
-    padding: 2rem 4rem;
+    padding: 2rem 10rem 1rem 10rem;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -88,21 +90,50 @@ nav a {
 }
 
 .product-card {
-    background: #fff;
+    /* background: #fff;
     border-radius: 12px;
     padding: 2rem;
     line-height: 5vh;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
     height: fit-content;
-    user-select: none;
+    user-select: none; */
+    width: 250px;
+
+    height: 350px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    border: 1px blur #7893ce;
+    border-radius: 15px;
+    padding: 10px;
+
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
+
+    margin: 10px;
+    /* Optional: margin between cards */
 
 }
 
+@media (max-width: 768px) {
+    .product-card {
+        width: 90%;
+        /* Make cards responsive */
+    }
+}
+
 .product-card img {
-    width: 100%;
+    /* width: 100%;
     max-height: 300px;
     object-fit: contain;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem; */
+    max-width: 100%;
+    /* Ensure images occupy full card width */
+    max-height: 200px;
+    /* Set a maximum height for the image */
+    object-fit: cover;
 
 }
 
@@ -173,6 +204,17 @@ nav a {
     width: 100%;
     border-radius: 50px;
     align-items: center;
+}
+
+.wrapper .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: 100%;
+    background-color: #2d282833;
+    pointer-events: none;
+    border-radius: 50px;
 }
 
 .carousel.dragging {

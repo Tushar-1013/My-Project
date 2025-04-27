@@ -1,18 +1,24 @@
 const express = require("express")
-const product = require("../models/product.model.js")
 const ImgHandler = require("../config/multer.js")
-const bannerModel = require("../models/banner.model.js")
+const product = require("../models/product.model.js")
 
 const router = express.Router()
+
+router.get('/', (req, res) => {
+    res.render('adminviews/addproduct.ejs')
+})
+
 router.post('/', ImgHandler.single('productImg'), async (req, res) => {
 
-    let { productname, category, subcategory, description, price } = req.body
+    let { id, productname, category, subcategory, description, price } = req.body
     let productImg = req.file.filename
     console.log(req.file);
 
-    if (!productname || !description || !price) return res.json({ message: "Name , description and price are required", status: 400 })
-
+    if (!id || !productname || !description || !price) return res.json({ message: "Name , description and price are required", status: 400 })
+    // let existingProduct = product.findOne({ _id: id })
+    // if (existingProduct) return res.json({ message: "Product with this Id already exists" })
     let Product = await product.create({
+        id,
         productname,
         category,
         subcategory,
@@ -23,28 +29,6 @@ router.post('/', ImgHandler.single('productImg'), async (req, res) => {
     })
 
 
-})
-
-router.post('/addbanner', ImgHandler.single('banner'), async (req, res) => {
-    let { title } = req.body
-    let banner = req.file.filename
-    console.log(banner);
-    console.log(title);
-
-
-
-    if (!title || !banner) return res.json({ message: "Fields cannot be empty" })
-
-    let Banner = await bannerModel.create({
-        title,
-        banner,
-    })
-
-
-})
-
-router.get('/', (req, res) => {
-    res.render('adminviews/dashboard.ejs')
 })
 
 

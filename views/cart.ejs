@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cart</title>
-    <link rel="stylesheet" href="stylesheets/style.css" />
+    <link rel="stylesheet" href="stylesheets/cart.css" />
   </head>
   <body>
     <header>
@@ -15,11 +15,15 @@
         <a href="/about">About</a>
         <a href="/cart" class="cart-btn">Cart</a>
       </nav>
-    </header>
-
-    <main style="padding: 2rem">
-      <h1>Your Cart</h1>
-      <p>Cart functionality coming soon!</p>
-    </main>
+      <div class="cart-container">
+        <h1>Your Cart</h1>
+        <div id="cart-items"></div>
+    
+        <div class="cart-summary">
+          <p id="total-price"></p>
+          <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+        </div>
+      </div>
+      <script src ="/scripts/cart.js"></script>
   </body>
 </html>

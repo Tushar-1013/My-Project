@@ -10,23 +10,22 @@
   <body>
     <div class="dashboard">
       <aside class="sidebar">
-        <h2>Admin</h2>
+        <h2><%= user.name %></h2>
         <nav>
           <ul>
-            <li onclick="renderView('addProduct')">Add Product</li>
-            <li onclick="renderView('editProduct')">Edit Product</li>
-            <li onclick="renderView('deleteProduct')">Delete/Update</li>
-            <li onclick="renderView('addBanner')">Add Banner</li>
+            <li><a href="/addproduct">Add Product</a></li>
+            <li><a href="/updateproduct">Edit Product</a></li>
+            <li><a href="/deleteproduct">Delete</a></li>
+            <li><a href="/addbanner">Add Banner</a></li>
           </ul>
         </nav>
       </aside>
       <main class="main-view">
         <div id="content">
-          <h2>Welcome, Admin</h2>
+          <h2>Welcome, <%= user.name%></h2>
           <p>Select an option from the left to get started.</p>
         </div>
       </main>
     </div>
-    <script src="/scripts/script.js"></script>
   </body>
 </html>

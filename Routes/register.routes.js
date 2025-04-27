@@ -24,6 +24,7 @@ router.post('/', async (req, res) => {
         name,
         email,
         password: hashPass,
+        role: "user",
     })
 
     res.redirect('./login')

@@ -1,12 +1,17 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const Connection = require("./config/db")
-const addproductRoute = require("./Routes/addproduct.routes")
+const dashboardRoute = require("./Routes/dashboard.routes.js")
 const cartRoute = require("./Routes/Cart.routes.js")
 const registerRoute = require("./Routes/register.routes.js")
 const loginRoute = require("./Routes/login.routes.js")
 const Product = require("./models/product.model.js")
 const Banner = require("./models/banner.model.js")
+const updateproductRoute = require("./Routes/updateproduct.route.js")
+const deleteproductRoute = require("./Routes/deleteproduct.routes.js")
+const addproductRoute = require("./Routes/addproduct.routes.js")
+const addbannerRoute = require("./Routes/addbanner.routes.js")
+const removebannerRoute = require("./Routes/removebanner.routes.js")
 
 
 
@@ -14,38 +19,18 @@ const PORT = 3000
 
 const app = express()
 
+app.use(express.json())
 app.set('view engine', 'ejs')
 app.use(express.static("public"))
 app.use(express.urlencoded({ extended: true }))
 
 Connection()
 app.get('/', async (req, res) => {
-    // const products = [
-    //     {
-    //         name: "Beige T-Shirt",
-    //         price: 20.0,
-    //         image: "https://www.botnia.in/cdn/shop/files/PACKOF6_23_65892a22-dc5f-450f-979f-f82a56bb1a44.png?v=1716376204&width=3000"
-    //     },
-    //     {
-    //         name: "Brown Tote Bag",
-    //         price: 25.0,
-    //         image: "https://via.placeholder.com/200x200.png?text=Tote+Bag"
-    //     },
-    //     {
-    //         name: "Minimal Mug",
-    //         price: 15.0,
-    //         image: "https://via.placeholder.com/200x200.png?text=Mug"
-    //     },
-    //     {
-    //         name: "Phone Case",
-    //         price: 18.0,
-    //         image: "https://via.placeholder.com/200x200.png?text=Phone+Case"
-    //     }
-    // ];
+
     const products = await Product.find()
     const banners = await Banner.find()
 
-    // });
+
 
     res.render("index.ejs", { products, banners })
 })
@@ -62,14 +47,14 @@ app.use('/cart', cartRoute)
 
 
 
-app.use('/dashboard', addproductRoute)
+app.use('/dashboard', dashboardRoute)
 app.use('/register', registerRoute)
-
 app.use('/login', loginRoute)
-app.get('/demo', (req, res) => {
-    res.render("demo.ejs")
-})
-
+app.use('/addproduct', addproductRoute)
+app.use('/updateproduct', updateproductRoute)
+app.use('/deleteproduct', deleteproductRoute)
+app.use('/addbanner', addbannerRoute)
+app.use('/removebanner', removebannerRoute)
 
 app.listen(PORT, (req, res) => {
     console.log(`server is running on Port ${PORT}`);

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SHOP HUB | Admin</title>
     <link rel="stylesheet" href="/stylesheets/styles.css" />
+    <link rel="stylesheet" href="/stylesheets/demo.css" />
   </head>
   <body>
     <div class="dashboard">
@@ -21,21 +22,29 @@
       </aside>
       <main class="main-view">
         <div id="content">
-          <h2>Add Product</h2>
-          <form enctype="multipart/form-data" method="POST">
-            <input type="number" name="id" placeholder="Enter Product ID" />
-            <input type="file" name="productImg" />
-            <input type="text" placeholder="Product Name" name="productname" />
-            <input type="number" placeholder="Price" name="price" />
+          <h2>Edit Product</h2>
+          <form  method="post">
             <input
               type="text"
-              placeholder="Product Description"
-              name="description"
+              placeholder="Enter the id of product you need to update"
+              name = "id"
             />
-            <button action="submit">Add Product</button>
+            <input
+              type="text"
+              placeholder="Updated Name"
+              name="updatedname"
+            />
+            <input
+              type="number"
+              placeholder="Updated Price"
+              name="updatedprice"
+            />
+            <input type="text" name="description" />
+            <button type="submit">Update Product</button>
           </form>
-        </div>
+        
       </main>
     </div>
+    <script src="/scripts/script.js"></script>
   </body>
 </html>

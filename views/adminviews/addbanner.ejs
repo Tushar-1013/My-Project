@@ -21,19 +21,22 @@
       </aside>
       <main class="main-view">
         <div id="content">
-          <h2>Add Product</h2>
-          <form enctype="multipart/form-data" method="POST">
-            <input type="number" name="id" placeholder="Enter Product ID" />
-            <input type="file" name="productImg" />
-            <input type="text" placeholder="Product Name" name="productname" />
-            <input type="number" placeholder="Price" name="price" />
+          <h2>Add Banner</h2>
+          <form
+            enctype="multipart/form-data"
+            method="POST"
+            action="/dashboard/addbanner"
+          >
             <input
               type="text"
-              placeholder="Product Description"
-              name="description"
+              name="title"
+              placeholder="banner title"
+              required
             />
-            <button action="submit">Add Product</button>
+            <input type="file" placeholder="banner" name="banner" required />
+            <button type="submit">Upload Banner</button>
           </form>
+          <a href="/removebanner"><button>Remove an existing banner</button></a>
         </div>
       </main>
     </div>

@@ -22,7 +22,7 @@ router.post('/', async (req, res) => {
     let decodedPassword = await bcrypt.compare(password, user.password)
     if (!decodedPassword) return res.json({ message: "Invalid email or password" })
 
-    let token = jwt.sign({ id: user._id, name: user.name }, "hahaha")
+    let token = jwt.sign({ id: user._id, name: user.name, role: user.role }, "hahaha")
     res.cookie('token', token)
 
     res.redirect('/cart')

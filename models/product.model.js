@@ -3,6 +3,7 @@ const product = require("../models/product.model.js")
 
 
 const productModel = mongoose.Schema({
+
     id: {
         type: Number,
     },
