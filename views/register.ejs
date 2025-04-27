@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="/stylesheets/registerlogin.css" />
+  </head>
+  <body>
+    <div class="auth-container">
+      <form class="form" method="post">
+        <h2>Register</h2>
+        <input type="text" placeholder="Username" name="name" required />
+        <input type="email" placeholder="Email" name="email" required />
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          required
+        />
+        <input
+          type="password"
+          placeholder="Confirm Password"
+          name="confirmPassword"
+          required
+        />
+        <button type="submit">Register</button>
+        <p>Already registered? <a href="/login">Login</a></p>
+      </form>
+    </div>
+  </body>
+</html>

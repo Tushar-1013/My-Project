@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop Hub</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">SHOP HUB</div>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/shop">Shop</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/cart" class="cart-btn">Cart</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="hero">
+        <div class="wrapper">
+          <i id="left" class="fa-solid fa-angle-left"></i>
+          <div class="carousel">
+            <% banners.forEach(banner =>{ %>
+            <img
+              src="/uploads/<%= banner.banner %>"
+              alt="img"
+              draggable="false"
+            />
+            <% }) %>
+          </div>
+          <i id="right" class="fa-solid fa-angle-right"></i>
+        </div>
+      </section>
+      <section class="products">
+        <% products.forEach(product => { %>
+        <div class="product-card">
+          <img src="/uploads/<%= product.img %>" alt="loading" />
+          <h3><%= product.productname %></h3>
+          <p><%= product.description %></p>
+          <p><b>INR</b> <%= product.price.toFixed(2) %></p>
+          <button>Add to Cart</button>
+        </div>
+        <% }) %>
+      </section>
+    </main>
+    <script src="/scripts/slide.js"></script>
+  </body>
+</html>
