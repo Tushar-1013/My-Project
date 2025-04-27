@@ -20,8 +20,7 @@ nav {
     align-items: center;
     background-color: #ffffff63;
     font-family: "Roboto", sans-serif;
-    position: sticky;
-    top: 0px;
+
     z-index: 1;
 }
 
@@ -86,18 +85,20 @@ nav a {
     grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
     gap: 2rem;
     padding: 2rem 4rem;
+    background-color: #ffffff5c;
 
 }
 
 .product-card {
-    /* background: #fff;
+    background: #fffefefc;
     border-radius: 12px;
     padding: 2rem;
     line-height: 5vh;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+    /* box-shadow: 0 0 8px rgba(0, 0, 0, 0.05); */
+    box-shadow: 0px 0px 5px 0px white;
     height: fit-content;
-    user-select: none; */
-    width: 250px;
+    user-select: none;
+    /* width: 250px;
 
     height: 350px;
 
@@ -112,7 +113,7 @@ nav a {
 
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
 
-    margin: 10px;
+    margin: 10px; */
     /* Optional: margin between cards */
 
 }
@@ -125,15 +126,15 @@ nav a {
 }
 
 .product-card img {
-    /* width: 100%;
-    max-height: 300px;
-    object-fit: contain;
-    margin-bottom: 1rem; */
     max-width: 100%;
-    /* Ensure images occupy full card width */
     max-height: 200px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    /* max-width: 100%; */
+    /* Ensure images occupy full card width */
+    /* max-height: 200px; */
     /* Set a maximum height for the image */
-    object-fit: cover;
+    /* object-fit: cover; */
 
 }
 
@@ -212,7 +213,7 @@ nav a {
     left: 0;
     width: inherit;
     height: 100%;
-    background-color: #2d282833;
+    background-color: #2d28281c;
     pointer-events: none;
     border-radius: 50px;
 }
@@ -249,4 +250,37 @@ nav a {
     .carousel img {
         width: 100%;
     }
+}
+
+.product-holder {
+    height: auto;
+    width: 100%;
+    background: white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-holder .img-holder {
+    height: 35vh;
+    width: 20vw;
+    padding: 1rem;
+}
+
+.product-holder .description {
+    height: auto;
+
+}
+
+.img-holder img {
+    height: 100%;
+    width: 100%;
+}
+
+.products2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+    gap: 2rem;
+    padding: 2rem 4rem;
+    background-color: #ffffff5c;
 }

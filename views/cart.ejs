@@ -1,29 +1,28 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cart</title>
-    <link rel="stylesheet" href="stylesheets/cart.css" />
+    <link rel="stylesheet" href="/stylesheets/demo.css" />
   </head>
   <body>
     <header>
-      <div class="logo">LOGO</div>
       <nav>
-        <a href="/">Home</a>
-        <a href="/shop">Shop</a>
-        <a href="/about">About</a>
-        <a href="/cart" class="cart-btn">Cart</a>
+        <div class="logo">LOGO</div>
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About</a>
       </nav>
-      <div class="cart-container">
-        <h1>Your Cart</h1>
+    </header>
+
+    <main style="padding: 2rem">
+      <div id="cart-section">
+        <h2>Your Cart</h2>
         <div id="cart-items"></div>
-    
-        <div class="cart-summary">
-          <p id="total-price"></p>
-          <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
-        </div>
+        <h3>Total: ₹<span id="cart-total">0</span></h3>
+        <button onclick="checkout()">Checkout</button>
       </div>
-      <script src ="/scripts/cart.js"></script>
+    </main>
+    <script src="/scripts/cart.js"></script>
   </body>
 </html>

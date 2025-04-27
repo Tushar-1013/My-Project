@@ -59,3 +59,7 @@ app.use('/removebanner', removebannerRoute)
 app.listen(PORT, (req, res) => {
     console.log(`server is running on Port ${PORT}`);
 })
+
+app.get('/demo', (req, res) => {
+    res.render('demo.ejs')
+})

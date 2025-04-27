@@ -59,7 +59,7 @@
           <p><b>INR</b> <%= product.price.toFixed(2) %></p>
           <button
             class="add-btn"
-            onclick="addToCart('<%= product.productname%>','<%= product.price%>', '/uploads/<%= product.img %>')"
+            onclick="addtocart('<%= product._id %>','/uploads/<%= product.img %>','<%= product.productname%>',<%= product.price %> )"
           >
             Add to Cart
           </button>
@@ -68,6 +68,6 @@
       </section>
     </main>
     <script src="/scripts/slide.js"></script>
-    <script src="/public/scripts/cart.js"></script>
+    <script src="/scripts/cart.js"></script>
   </body>
 </html>
